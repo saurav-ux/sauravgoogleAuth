@@ -12,7 +12,8 @@ import cors from "cors";
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    // origin: "http://localhost:3000",
+    origin:['https://deploy-mern-1whq.vercel.app'],
     methods: "GET,POST",
     credentials: true,
   })

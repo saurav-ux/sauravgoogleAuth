@@ -2,13 +2,14 @@ import Googlestr from "passport-google-oauth20";
 const GoogleStrategy = Googlestr.Strategy;
 import UserData from "../Models/User.js";
 export default function (passport) {
+  const PORT = process.env.PORT || 5001;
   passport.use(
     new GoogleStrategy(
       {
         clientID:
           "795827603723-9fqv144sl106punjk459kuj76lc8jdvu.apps.googleusercontent.com",
         clientSecret: "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",
-        callbackURL: "http://localhost:5001/auth/google/callback",
+        callbackURL: `http://localhost:${PORT}/auth/google/callback`,
         scope: ["email", "profile"],
       },
       async (accessToken, refreshToken, profile, done) => {

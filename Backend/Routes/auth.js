@@ -25,7 +25,8 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:3000/dashboard",
+    // successRedirect: "http://localhost:3000/dashboard",
+    successRedirect:'https://sauravgoogleauth.netlify.app/dashboard',
     failureRedirect: "/",
   })
 );
@@ -36,7 +37,8 @@ router.get("/logout", (req, res) => {
     if (err) {
       return res.status(500).send("Internal Server Error: " + err);
     }
-    res.redirect("http://localhost:3000/");
+    // res.redirect("http://localhost:3000/");
+    res.redirect('https://sauravgoogleauth.netlify.app/')
 
     // res.status(200).send({ status: 'Logout' });
   });
